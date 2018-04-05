@@ -12,7 +12,7 @@
 
 คำตอบ:
 ```
-?
+.
 ```
 
 ## 2. Create Simple Mobile Application
