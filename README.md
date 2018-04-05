@@ -17,13 +17,18 @@ import java.io.FileReader;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+
 public class scores {
     public static void main(String args[]){ 
+    
     	JSONParser parser = new JSONParser();
+        
         try {
-            JSONArray arr = (JSONArray) parser.parse(new FileReader("C:\\Users\\Admin\\dicl-intern-18\\data.json"));           
+            JSONArray arr = (JSONArray) parser.parse(new FileReader("C:\\Users\\Admin\\dicl-intern-18\\data.json"));  
+            
             long total=0,max=-999,min=999;
             
+            //1.1
             for (Object o : arr) {
                 JSONObject student = (JSONObject) o;
                 long Score = (long) student.get("score");
@@ -35,11 +40,13 @@ public class scores {
             for (Object o : arr) {
                 JSONObject student = (JSONObject) o;
                 String Name = (String) student.get("name");
-                long Score = (long) student.get("score");                
+                long Score = (long) student.get("score");   
+                
                 //1.2
                 if(Score>70) {
                 	System.out.println("Name:" + Name + "\tScore:"+Score);
-                }               
+                }
+                
                 //1.3
                 if(Score>max) {
                 	max=Score;        	
@@ -47,6 +54,7 @@ public class scores {
                 	min=Score;
                 }                             
             }
+            
             System.out.println("\n1.3: "); 
             System.out.println("Max:" +max);  
             System.out.println("Min:" +min);  
