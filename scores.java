@@ -18,12 +18,25 @@ public class JSON_Reader
             //Reading the String
             String name = (String) jsonObject.get("name");
             int score = (int) jsonObject.get("score");
-            int grade = (int) jsonObject.get("grade");            
+            int grade = (int) jsonObject.get("grade");
+            int total=0;            
             
-            //Printing all the values
-            System.out.println("Name : " + name);
-            System.out.println("Score : " + score);
-            System.out.println("Grade:" + grade);
+            
+            System.out.println("1.1 Average Score");
+            for (int i = 0; i < score.length; i++) {
+                total+=score;
+                System.out.println("Average score : " +total);
+            }
+            System.out.println("1.2 Who has 70+ Score");
+            for (int i = 0; i < score.length; i++) {
+                if (score>70) {
+                    System.out.println("Name : " +name);
+                    System.out.println("Score : " +score);
+                }
+            }
+
+            
+            
             
         }
         catch(FileNotFoundException fe)
